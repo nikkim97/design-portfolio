@@ -3110,10 +3110,9 @@ input, select, textarea {
 	}
 
 	#header {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
 		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		background-color: #2a2f4a;
 		box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
 		cursor: default;
@@ -3950,3 +3949,151 @@ input, select, textarea {
 			opacity: 1;
 			visibility: visible;
 		}
+
+.main-nav ul {
+	display: none; /* Hidden by default on mobile */
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 2em; /* Space between links */
+}
+
+.main-nav a {
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	letter-spacing: 0.1em;
+	padding: 0.5em 0;
+	transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+	color: #9bf1ff; /* Or whatever accent color you prefer */
+}
+
+/* Hamburger menu for mobile */
+.menu-toggle {
+	display: block;
+	cursor: pointer;
+	padding: 0.5em;
+}
+
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+	content: '';
+	display: block;
+	width: 24px;
+	height: 2px;
+	background: #ffffff;
+	margin: 5px 0;
+	transition: 0.3s;
+}
+
+/* Show navigation as row on desktop */
+@media screen and (min-width: 768px) {
+	.main-nav ul {
+		display: flex;
+	}
+
+	.menu-toggle {
+		display: none; /* Hide hamburger on desktop */
+	}
+}
+
+/* Mobile menu when active */
+.main-nav.active ul {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background: #2a2f4a;
+	padding: 1em;
+	width: 200px;
+}
+
+/* Header */
+.main-nav ul {
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mobile menu when active */
+.main-nav.active ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #2a2f4a;
+    padding: 1em;
+    width: 200px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hamburger icon animation */
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animate hamburger to X when active */
+.main-nav.active .menu-toggle::before {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.main-nav.active .menu-toggle::after {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.main-nav.active .menu-toggle span {
+    opacity: 0;
+}
+
+/* Base navigation styles */
+.main-nav ul {
+    gap: 0.5em;
+    display: flex !important;  /* Force display on desktop */
+    list-style: none;
+    padding-left: 0;
+    opacity: 1 !important;    /* Force opacity on desktop */
+    transform: none !important; /* Reset any transforms */
+}
+
+.main-nav ul li a {
+    font-size: 0.7em;
+    padding: 0 0.5em;
+}
+
+/* Hamburger menu icon - hidden by default on desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav ul {
+        display: none !important; /* Override the desktop display */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #2a2f4a;
+        flex-direction: column;
+        padding: 1em 0;
+    }
+
+    .main-nav.active ul {
+        display: flex !important;
+    }
+}

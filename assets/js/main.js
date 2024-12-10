@@ -332,4 +332,26 @@
 
 			});
 
+	// Add this to your existing main.js
+	document.querySelector('.menu-toggle').addEventListener('click', function() {
+		document.querySelector('.main-nav').classList.toggle('active');
+	});
+
+	// Add this to your existing main.js file
+	document.addEventListener('DOMContentLoaded', function() {
+		const menuToggle = document.querySelector('.menu-toggle');
+		const mainNav = document.querySelector('.main-nav');
+
+		menuToggle.addEventListener('click', function() {
+			mainNav.classList.toggle('active');
+		});
+
+		// Close menu when clicking outside
+		document.addEventListener('click', function(e) {
+			if (!mainNav.contains(e.target)) {
+				mainNav.classList.remove('active');
+			}
+		});
+	});
+
 })(jQuery);
