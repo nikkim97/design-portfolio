@@ -3966,8 +3966,25 @@ input, select, textarea {
 	letter-spacing: 0.1em;
 	padding: 0.5em 0;
 	transition: color 0.2s ease;
+	position: relative; /* Add this for absolute positioning of underline */
 }
 
+/* Add underline effect */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #9bf1ff; /* Same color as hover state */
+    transition: width 0.3s ease;
+}
+
+/* Animate underline on hover */
+.main-nav a:hover::after {
+    width: 95%;
+}
 .main-nav a:hover {
 	color: #9bf1ff; /* Or whatever accent color you prefer */
 }
