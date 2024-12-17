@@ -4085,7 +4085,12 @@ input, select, textarea {
 
 .main-nav ul li a {
     font-size: 0.7em;
-    padding: 0 0.5em;
+    padding: 0.5em 0.5em;
+}
+
+.main-nav ul li a.active {
+    pointer-events: none;
+    cursor: default;
 }
 
 /* Hamburger menu icon - hidden by default on desktop */
