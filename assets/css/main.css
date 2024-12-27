@@ -4119,3 +4119,61 @@ input, select, textarea {
         display: flex !important;
     }
 }
+
+.figma-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    gap: 2em;
+    justify-items: center;
+    margin: 2em 0;
+}
+
+/* Mobile app prototype styling */
+.figma-embed.app {
+    width: 375px;
+    height: 812px;
+}
+
+/* Webpage prototype styling */
+.figma-embed.webpage {
+    width: 1200px;
+    height: 800px;
+}
+
+.figma-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+}
+
+/* Mobile app specific border radius */
+.figma-embed.app iframe {
+    border-radius: 32px;
+}
+
+/* Webpage specific border radius */
+.figma-embed.webpage iframe {
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 1400px) {
+    .figma-embed.webpage {
+        width: 900px;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .figma-embed.webpage {
+        width: 100%;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .figma-embed.app {
+        width: 100%;
+        height: 600px;
+    }
+}
