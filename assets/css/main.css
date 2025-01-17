@@ -4177,3 +4177,31 @@ input, select, textarea {
         height: 600px;
     }
 }
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #9bf1ff;
+    color: #242943;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 9999;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.back-to-top:hover {
+    background: #53e3fb;
+    color: #242943;
+}
+
+.back-to-top i {
+    font-size: 20px;
+    line-height: 40px;
+}
